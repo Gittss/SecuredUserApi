@@ -1,0 +1,33 @@
+<h2>{{viewTitle}}</h2>
+
+<style>
+    .formclass{
+        background-color: rgb(1, 58, 58);
+        color: white;
+        margin: 20px;
+        border-radius: 7px;
+        padding: 20px;
+        font-size: 18px;
+    }
+    .button{
+        border-radius: 2px;
+        background-color: seashell;
+        color: black;
+    }
+</style>
+<form autocomplete="off" class="formclass" action="/user/token" method="POST">
+<input type="hidden" name="name" value="{{list.name}}">
+   <div>
+       <label>Number</label>
+       <input type="text" name="number" placeholder="Enter mobile number">
+
+       <label>Security Token</label>
+       <input type="text" name="sec_token" placeholder="Enter security token">
+       <div style="color: red;">
+           {{list.sec_tokenError}}
+       </div><br>
+   </div>
+   <div>
+       <button class="button" type="submit">Verify</button>
+   </div>
+</form>

@@ -1,0 +1,28 @@
+<h2>{{viewTitle}}</h2>
+
+<style>
+    .table{
+        margin-left: 30px;
+        color: white;
+        border-radius: 7px;
+        width: 50%;
+        text-align: center;
+    }
+</style>
+<table class="table">
+    <tr style="background-color: black;">
+        <th>Name</th>
+        <th>Mobile no.</th>
+        <th></th>
+    </tr>    
+    <tbody style="background-color: rgb(19, 19, 49);">
+        <tr>
+            <td>{{list.user.name}}</td>
+            <td>{{list.user.number}}</td>
+            <td>
+               <a style="color: white;" href="/user/{{list.user._id}}">edit</a>&emsp;
+               <a style="color: white;" href="/user/delete/{{list.user._id}}" onclick="return confirm('Delete this record?');">delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
